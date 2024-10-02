@@ -1,0 +1,61 @@
+.about-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background for better contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Define styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  .about-container {
+    max-width: 90%; /* Adjusted maximum width for smaller screens */
+  }
+  
+  p {
+    font-size: 14px; /* Adjusted font size for paragraphs */
+  }
+}
+
+.about-container p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555; /* Darker text color for better readability */
+  text-align: left; /* Align text to the left for better readability */
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: 1px solid #ddd;
+  margin: 20px auto;
+  width: 50%;
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.searchBtn button {
+  background-color:rgb(151, 88, 163);
+  margin: 5%;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.searchBtn:hover {
+  background-color:rgb(151, 88, 163,0.6);
+  color: white;
+}

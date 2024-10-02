@@ -1,0 +1,27 @@
+.sort-filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sort-filter-container label {
+    margin-right: 10px;
+  }
+  
+  .sort-filter-container select {
+    margin-right: 10px;
+  }
+  
+  .sort-filter-container button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sort-filter-container button:hover {
+    background-color: #0056b3;
+  }
+  

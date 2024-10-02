@@ -1,0 +1,118 @@
+.cart-page {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.cart-items {
+  margin-top: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item .coursecard {
+  flex: 0 0 40%; /* Ensure it takes 40% of the container */
+  margin-right: 10px;
+}
+
+.cart-item .details {
+  flex: 0 0 35%; /* Ensure it takes 35% of the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-item .details p {
+  margin: 0;
+}
+
+.cart-item .provider,
+.cart-item .price {
+  font-size: 16px;
+  font-weight: normal; /* Change to normal font weight */
+  color: #000; 
+  margin: 5px 0;
+}
+
+/* Additional styling for provider and price for better look */
+.cart-item .provider {
+  font-size: 14px; /* Slightly smaller font size */
+  color: #666; /* Lighter color for provider */
+  font-style: italic; /* Italicized for distinction */
+}
+
+.cart-item .price {
+  font-size: 18px; /* Slightly larger font size */
+  color: #333; /* Slightly darker color for price */
+}
+
+.remove-btn:hover {
+  background-color: #e65555;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.price-summary p {
+  font-size: 25px;
+  margin: 0;
+  font-weight: bold; /* Add bold font weight for emphasis */
+  color: #333; /* Adjust text color as needed */
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 10px;
+  margin-top: 20px;
+  text-align: center; /* Center the button itself */
+}
+
+.action-buttons button:hover {
+  background-color: #45a049;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.clear-cart-btn {
+  margin-top: 10px;
+  background-color: #ff6666;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: auto; /* Remove fixed width */
+  margin-left: auto; /* Move button to the right */
+}

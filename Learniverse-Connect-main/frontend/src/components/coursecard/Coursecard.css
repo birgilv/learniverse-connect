@@ -1,0 +1,72 @@
+/* Coursecard.css */
+.course-card,
+.course-card-skeleton {
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  height: 400px;
+  width: 100%
+}
+
+.course-card {
+  border: 2px solid #8a2be2;
+  color: black;
+}
+
+.course-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  color: #8a2be2;
+  transform: scale(1.05);
+}
+
+.image-section,
+.skeleton-image {
+  flex: 1;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info-section {
+  /* flex: flex; */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  /* color: black; */
+}
+
+.info-section h2 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.favorite-icon {
+  font-size: 32px; /* Adjust the size of the star icon */
+  display: flex;
+  justify-content: right; 
+  align-items: center;
+  width: 30px; /* Set a fixed width to ensure the icon doesn't affect the layout */
+  height: 30px; /* Set a fixed height to ensure the icon doesn't affect the layout */
+}
+
+.info-section p {
+  margin: 4px 0;
+  font-size: 17px;
+}
+
+.price-section.close {
+  display: none;
+}
+

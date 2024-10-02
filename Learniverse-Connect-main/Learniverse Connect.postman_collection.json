@@ -1,0 +1,1359 @@
+{
+	"info": {
+		"_postman_id": "b10b8bc4-fb4c-438b-b9e9-810afd26f462",
+		"name": "Learniverse Connect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35055111",
+		"_collection_link": "https://ntnu-iir-students.postman.co/workspace/Learniverse-Connect~f51c5706-5a0c-40c0-bbe3-9b3e08c488f5/collection/32826715-b10b8bc4-fb4c-438b-b9e9-810afd26f462?action=share&source=collection_link&creator=35055111"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "successful login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 200 OK\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains a JWT token\r",
+											"pm.test(\"Response contains JWT token\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response do not contain error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.include(\"Invalid email or password\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"dave@dave.com\",\r\n    \"password\": \"Dangerous2024\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/authenticate",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "successful login as admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 200 OK\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains a JWT token\r",
+											"pm.test(\"Response contains JWT token\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response do not contain error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.include(\"Invalid email or password\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"dave@dave.com\",\r\n    \"password\": \"Dangerous2024\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/authenticate",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unsuccessful login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 401 Unautorized\r",
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains a JWT token\r",
+											"pm.test(\"Response contains JWT token\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response contains error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid email or password\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@mail.com\",\r\n    \"password\": \"1324356567\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/authenticate",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "invalid email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 401 Unautorized\r",
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains a JWT token\r",
+											"pm.test(\"Response contains JWT token\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response contains error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid email or password\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@mail.com\",\r\n    \"password\": \"1234567\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/authenticate",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "invalid password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 401 Unautorized\r",
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains a JWT token\r",
+											"pm.test(\"Response contains JWT token\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response contains error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid email or password\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"birgitte@mail.com\",\r\n    \"password\": \"1324356567\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/authenticate",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "This folder contains requests for testing the login functionality for authentication.\n\n\\- **Successful Login**:  \n\\- Description: This request tests the successful login scenario by providing valid email and password credentials.  \n\\- Expected Behavior: Returns a JWT token upon successful authentication.\n\n\\- **Unsuccessful Login**:  \n\\- Description: This request tests the unsuccessful login scenario by providing both invalid email and password credentials.  \n\\- Expected Behavior: Returns an error message indicating invalid credentials.\n\n\\- **Invalid Email**:  \n\\- Description: This request tests the unsuccessful login scenario by providing invalid email credentials.  \n\\- Expected Behavior: Returns an error message indicating invalid credentials.\n\n\\- **Invalid Password**:  \n\\- Description: This request tests the unsuccessful login scenario by providing invalid password credentials.  \n\\- Expected Behavior: Returns an error message indicating invalid credentials."
+				},
+				{
+					"name": "Signup",
+					"item": [
+						{
+							"name": "successful signup",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 200 OK\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Set the user id for the new user\r",
+											"pm.environment.set(\"new_user_id\", pm.response.text());\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response do not contain error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.include(\"Invalid email or password\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"newusers@mail.com\",\r\n    \"password\": \"newpassword\",\r\n    \"username\": \"newuser\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unsuccessful signup",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 400 BAD REQUEST\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"invalid\",\r\n    \"password\": \"invalid\",\r\n    \"username\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "invalid email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 400 BAD REQUEST\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response contains error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Email already taken\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"invalid\",\r\n    \"password\": \"invalid\",\r\n    \"username\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "empty email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 400 BAD REQUEST\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response contains error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Email can't be empty\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"\",\r\n    \"password\": \"invalid\",\r\n    \"username\": \"invalid\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "invalid password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 400 BAD REQUEST\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response contains error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password must be at least 6 characters\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"newuseremail\",\r\n    \"password\": \"short\",\r\n    \"username\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "empty password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 400 BAD REQUEST\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response contains error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password can't be empty\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"1\",\r\n    \"password\": \"\",\r\n    \"username\": \"invalid\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "This folder contains requests for testing the signup functionality for authentication.\n\n\\- **Successful Signup**:  \n\\- Description: This request tests the successful signup scenario by providing valid email and password credentials.  \n\\- Expected Behavior: Returns a JWT token upon successful authentication.\n\n\\- **Unsuccessful Signup**:  \n\\- Description: This request tests the unsuccessful signup scenario by providing both invalid email and password credentials.  \n\\- Expected Behavior: Returns an error message indicating invalid credentials.\n\n\\- **Invalid Email**:  \n\\- Description: This request tests the unsuccessful login scenario by providing invalid email credentials.  \n\\- Expected Behavior: Returns an error message indicating invalid credentials.\n\n\\- **Empty Email**:  \n\\- Description: This request tests the unsuccessful signup scenario by providing empty email credentials.  \n\\- Expected Behavior: Returns an error message indicating empty credentials.\n\n\\- **Invalid Password**:  \n\\- Description: This request tests the unsuccessful signup scenario by providing invalid password credentials.  \n\\- Expected Behavior: Returns an error message indicating invalid credentials.\n\n\\- **Empty Password**:  \n\\- Description: This request tests the unsuccessful signup scenario by providing empty password credentials.  \n\\- Expected Behavior: Returns an error message indicating empty credentials"
+				},
+				{
+					"name": "Access",
+					"item": []
+				}
+			],
+			"description": "This folder contains requests for testing the authentication functionality.\n\n\\- **Login**:  \n\\- Description: This folder contains requests for testing the login functionality. This includes requests for testing both successful and unsuccessful logins. The unsuccessful logins includes tests for each bad credentials.\n\n\\- **Signup**:  \n\\- Description: This folder contains requests for testing the signup functionality. This includes requests for testing both successful and unsuccessful signup. The unsuccessful logins includes tests for each bad credentials.\n\n\\- **Access**:  \n\\- Description: This folder contains requests for testing the access for the user role functionality. This include tests for user access for different roles, such as admin, user and viewer."
+		},
+		{
+			"name": "Database",
+			"item": [
+				{
+					"name": "Courses",
+					"item": [
+						{
+							"name": "GET courses",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 200\", function() {\r",
+											"    pm.response.to.have.status(200)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/courses",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET course with id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 200\", function() {\r",
+											"    pm.response.to.have.status(200)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains id, title and related certification attributes\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData).to.have.property('id', 3);\r",
+											"    pm.expect(jsonData).to.have.property('title', 'Creating Web Application with .Net');\r",
+											"    pm.expect(jsonData).to.have.property('relatedCertification', '.Net Developer Fundamentals');\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/courses/3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"courses",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET non-existing course",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 404\", function() {\r",
+											"    pm.response.to.have.status(404)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/courses/5550",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"courses",
+										"5550"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE new course",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 201\", function() {\r",
+											"    pm.response.to.have.status(201)\r",
+											"});\r",
+											"\r",
+											"pm.environment.set(\"new_course_id\", pm.response.text());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaHVja0BjaHVjay5jb20iLCJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzE2NDQ4NDQ1LCJleHAiOjE3MzIwMDA0NDV9.HK-lUeFc6V8ZnaURYNy8yYLzEd3maTdOMsHFSbQNMBg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"New course\",\r\n    \"startDate\": \"2024-08-19\",\r\n    \"endDate\": \"2024-08-30\",\r\n    \"credit\": 2.0,\r\n    \"hoursPerWeek\": 10.0,\r\n    \"description\": \"This is a new course\",\r\n    \"relatedCertification\": \"New course\",\r\n    \"imageId\": 1,\r\n    \"hidden\": false,\r\n    \"category\": {\r\n        \"id\": 1,\r\n        \"subject\": \"Information Technologies\"\r\n    },\r\n    \"level\": {\r\n        \"id\": 1,\r\n        \"difficulty\": \"Beginner\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/courses",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE course",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 200\", function() {\r",
+											"    pm.response.to.have.status(200)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaHVja0BjaHVjay5jb20iLCJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzE2NDQ4NDQ1LCJleHAiOjE3MzIwMDA0NDV9.HK-lUeFc6V8ZnaURYNy8yYLzEd3maTdOMsHFSbQNMBg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/courses/{{new_course_id}}",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"courses",
+										"{{new_course_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE non-existing course",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 404\", function() {\r",
+											"    pm.response.to.have.status(404)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaHVja0BjaHVjay5jb20iLCJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzE2NDQ4NDQ1LCJleHAiOjE3MzIwMDA0NDV9.HK-lUeFc6V8ZnaURYNy8yYLzEd3maTdOMsHFSbQNMBg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/course/5550",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"course",
+										"5550"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get deleted course",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 200\", function() {\r",
+											"    pm.response.to.have.status(200)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains id, title and related certification attributes\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData).to.have.property('id', 1);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/courses/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"courses",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "GET users without authorization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 403\", function() {\r",
+											"    pm.response.to.have.status(403)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "jwt",
+									"jwt": [
+										{
+											"key": "algorithm",
+											"value": "HS256",
+											"type": "string"
+										},
+										{
+											"key": "isSecretBase64Encoded",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "payload",
+											"value": "{}",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "headerPrefix",
+											"value": "Bearer",
+											"type": "string"
+										},
+										{
+											"key": "queryParamKey",
+											"value": "token",
+											"type": "string"
+										},
+										{
+											"key": "header",
+											"value": "{}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer ",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET all users with admin role",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 200\", function() {\r",
+											"    pm.response.to.have.status(200)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "jwt",
+									"jwt": [
+										{
+											"key": "algorithm",
+											"value": "HS256",
+											"type": "string"
+										},
+										{
+											"key": "isSecretBase64Encoded",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "payload",
+											"value": "{}",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "headerPrefix",
+											"value": "Bearer",
+											"type": "string"
+										},
+										{
+											"key": "queryParamKey",
+											"value": "token",
+											"type": "string"
+										},
+										{
+											"key": "header",
+											"value": "{}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaHVja0BjaHVjay5jb20iLCJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzE2NDQ4NDQ1LCJleHAiOjE3MzIwMDA0NDV9.HK-lUeFc6V8ZnaURYNy8yYLzEd3maTdOMsHFSbQNMBg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET user with valid token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 200\", function() {\r",
+											"    pm.response.to.have.status(200)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains id, username and email\", function() {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData).to.have.property('id', 1);\r",
+											"    pm.expect(jsonData).to.have.property('username', 'username');\r",
+											"    pm.expect(jsonData).to.have.property('email', 'username@mail.com');\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/users/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET non-existing user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 404\", function() {\r",
+											"    pm.response.to.have.status(404)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXZlQGRhdmUuY29tIiwicm9sZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNzE2NDQ5MDQ1LCJleHAiOjE3MzIwMDEwNDV9.rcBYKlQ8ARjTlcuL4VPjh4ad-YJte5Se9IVXxBdPMrk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/users/5550",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"5550"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Creating user to be deleted",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Test if the response status code is 200 OK\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Set the user id for the new user\r",
+											"pm.environment.set(\"new_user_id\", pm.response.text());\r",
+											"\r",
+											"// Test if the response contains an error message for invalid credentials\r",
+											"pm.test(\"Response do not contain error message for invalid credentials\", function () {\r",
+											"    pm.expect(pm.response.text()).to.not.include(\"Invalid email or password\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"newusers@mail.com\",\r\n    \"password\": \"newpassword\",\r\n    \"username\": \"newuser\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE as user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 403\", function() {\r",
+											"    pm.response.to.have.status(403)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXZlQGRhdmUuY29tIiwicm9sZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNzE2NDAwNjE2LCJleHAiOjE3MzE5NTI2MTZ9.qK_scD6qJnjldfHxQ_e2G6TjCTbdDDMx83YcrmZuyH4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/users/26",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"26"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE as admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response has code 200\", function() {\r",
+											"    pm.response.to.have.status(200)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaHVja0BjaHVjay5jb20iLCJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNzE2NDQ4NDQ1LCJleHAiOjE3MzIwMDA0NDV9.HK-lUeFc6V8ZnaURYNy8yYLzEd3maTdOMsHFSbQNMBg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/users/26",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"26"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "SInce you need to be authenticated, we test create user in login test"
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Get all categories",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get a specific category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/categories/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"categories",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a category without authorization Copy",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/categories/5",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"categories",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a category with authorization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaHVja0BjaHVjay5jb20iLCJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJpYXQiOjE3MTY0MDA0NjksImV4cCI6MTczMTk1MjQ2OX0.fEi2N0hI29ft3NJmDzBOFe2G0p6kGNHzyufIj2pwYvk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"subject\": \"Economy and Leadership\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/categories/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"categories",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Updating category to original state",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaHVja0BjaHVjay5jb20iLCJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJpYXQiOjE3MTY0MDA0NjksImV4cCI6MTczMTk1MjQ2OX0.fEi2N0hI29ft3NJmDzBOFe2G0p6kGNHzyufIj2pwYvk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 4,\n    \"subject\": \"Data Science and Analytics\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/categories/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"categories",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GET homepage loads",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Home Page Loads\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.text()).to.include(\"main\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5173",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5173"
+				}
+			},
+			"response": []
+		}
+	]
+}

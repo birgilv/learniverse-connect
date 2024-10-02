@@ -1,0 +1,20 @@
+.purchased-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .purchased-content {
+    text-align: center;
+  }
+  
+  .success-image {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+  

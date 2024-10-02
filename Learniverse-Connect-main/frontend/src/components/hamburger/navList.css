@@ -1,0 +1,38 @@
+/* .navList button {
+  background-color: transparent;
+} */
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navList li {
+  display: flex;
+  /* Use flexbox */
+  align-items: center;
+  /* Align items vertically in the center */
+  margin-bottom: 2px;
+  /* Adjust margin as needed */
+}
+
+.navList li a {
+  transition: transform 0.3s ease;
+}
+
+.navList li a:hover {
+  transform: scale(1.15);
+}
+
+.button-image {
+  height: 30px;
+  width: auto;
+}
+
+.admin-header-link{
+  display: none;
+}
+
+.admin-header-link-admin {
+  display: block;
+}

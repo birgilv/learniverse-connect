@@ -1,0 +1,44 @@
+.user-avatar {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 80px;
+  margin-top: 2px;
+  font-size: 32px;
+  color: #000000;;
+  background-color: rgb(237, 237, 237);
+  overflow: hidden;
+}
+
+.user-avatar-link {
+  color: white;
+  font-size: 90%;
+}
+
+.avatar-image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+  height: 80px
+}
+
+.avatar-default-section {
+  display: none;
+}
+
+.avatar-default-section-active {
+  display: block;
+  /* background-color: aqua; */
+  color: black;
+}
+
+.avatar-image-section {
+  /* background-color: aqua; */
+}
+
+.avatar-image-section-none {
+  display: none;
+}

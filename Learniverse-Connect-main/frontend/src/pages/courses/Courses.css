@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* gap: 16px;
+  padding: 16px; */
+  margin: 0 auto;
+  max-width: 1800px;
+}
+
+.coursecards-skeleton,
+.coursecards {
+  box-sizing: border-box;
+  flex: 1 1 calc(33.333% - 32px);
+  padding: 1%;
+  max-width: 400px;
+}
+
+@media (max-width: 1000px) {
+  .coursecards-skeleton,
+  .coursecards {
+    flex: 1 1 calc(50% - 32px);
+    padding: 2%;
+  }
+  .courses-page-container {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .coursecards-skeleton,
+  .coursecards {
+    flex: 1 1 calc(100% - 32px);
+    padding: 3%;
+  }
+
+  .courses-page-container {
+    margin-top: 2rem;
+  }
+}
+
+.filter-section {
+  display: flex;
+  justify-content: center;
+}

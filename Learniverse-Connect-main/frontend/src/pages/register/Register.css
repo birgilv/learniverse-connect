@@ -1,0 +1,48 @@
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 22px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 16px 20px; /* Increased padding for taller input fields */
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 16px; /* Increased font size */
+}
+
+button {
+  background-color: rgb(151, 88, 163);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 0;
+}
+
+.form-container {
+  text-align: left;
+}
+
+.avatar {
+  margin: 0;
+  margin-top: 2%;
+  width: 100px;
+  height: 100px;
+}
+.error-message {
+  color: red;
+  font-size: 2rem;
+}

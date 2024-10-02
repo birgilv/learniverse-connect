@@ -1,0 +1,92 @@
+.description-cell {
+    max-width: 200px; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+}
+
+.description-cell.expanded {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+}
+
+.courseTable, .userTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.courseTable th, .courseTable td, .userTable th, .userTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.courseTable th, .userTable th  {
+    background-color: #f2f2f2;
+}
+
+.courseTable tr:nth-child(even), .userTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.courseTable tr:hover, .userTable tr:hover{
+    background-color: #ddd;
+}
+.button-container {
+    display: flex;
+}
+
+.button {
+    margin-right: 10px; /* Adjust spacing between buttons as needed */
+}
+
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+}
+
+.admin-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 30px 60px;
+    font-size: 24px;
+    color: white;
+    background-color: rgb(151, 88, 163);
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.admin-button:hover {
+    background-color: rgb(151, 88, 163,06);
+}
+
+
+.hidden td {
+    background-color: rgb(151, 88, 163, 0.4); 
+}
+
+.coursecard-container {
+    max-width: 400px; /* Adjust maximum width as needed */
+    margin: 0 auto; /* Center the Coursecard */
+  }
+
+.form {
+    width: 100%;
+    max-width: 700px;
+    background-color: #f9f9f9;
+    margin: 0 auto;
+}

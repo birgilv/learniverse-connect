@@ -1,0 +1,51 @@
+/* ConfirmationModal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure the overlay is on top of everything */
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal h2 {
+    margin-top: 0;
+  }
+  
+  .modal ul {
+    padding-left: 20px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    margin: 0 10px;
+  }
+
+  .total-price {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  .total-items {
+    color: #121212;
+    font-size: 1.2em;
+  }
+  

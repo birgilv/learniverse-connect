@@ -1,0 +1,165 @@
+.header-container {
+  background-image: linear-gradient(to right, rgb(151, 88, 163), rgb(204, 115, 207));
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: auto;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 7rem;
+}
+
+.header-container .header-content{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1500px;
+}
+
+.header-container .header-content .logo-and-title-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-container .header-content .logo-and-title-section .company-logo {
+  width: 5rem;
+  height: auto;
+}
+
+.header-container .header-content .logo-and-title-section .company-title {
+  padding-left: 1rem;
+  color: #ffffff;
+}
+
+.header-container .header-content .navlist-container {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.header-container .header-content .navlist-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.header-container .header-content .navlist-container ul li a {
+  margin: 1rem;
+  color: #ffffff;
+}
+
+.header-container .header-content .navlist-container ul li .cart-link {
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: none;
+}
+
+.header-container .header-content .navlist-container ul li .cart-link .cart-header-link {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-container .header-content .navlist-container ul li .cart-link .cart-header-link .button-image {
+  height: auto;
+  width: 2.25rem;
+}
+
+.header-container .header-content .hamburger-menu {
+  display: none;
+}
+
+.header-container .header-content .cart-and-profile-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/*  */
+.header-container .header-content .cart-and-profile-section .cart-container .cart-header-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header-container .header-content .cart-and-profile-section .cart-container .cart-header-link .cart-img {
+  height: auto;
+  width: 2.25rem;
+}
+
+.header-container .header-content .cart-and-profile-section .cart-container .cart-header-link .cart-text {
+  color: #ffffff;
+}
+
+
+.header-container .header-content .cart-and-profile-section .login-container .login-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .5rem;
+}
+
+.header-container .header-content .cart-and-profile-section .login-container .login-link .login-img {
+  height: auto;
+  width: 2.25rem;
+}
+
+.header-container .header-content .cart-and-profile-section .login-container .login-link .login-text {
+  color: #ffffff;
+}
+
+@media (max-width: 1000px) {
+  .header-container .header-content .logo-and-title-section .company-title {
+    width: 110px;
+  }
+
+  .header-container .header-content .navlist-container {
+    display: none;
+  }
+
+  .header-container .header-content .hamburger-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-container .header-content .logo-and-title-section .company-title {
+    display: none;
+  }
+
+  .header-container .header-content .cart-and-profile-section .cart-container .cart-header-link {
+    display: none;
+  }
+}
+
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart-container.pop .cart-img {
+  animation: pop 0.3s ease-in-out;
+}

@@ -1,0 +1,57 @@
+.menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to right, rgb(151, 88, 163), rgb(204, 115, 207));
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-bottom: 1rem;
+}
+
+.menu.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  width: 100%;
+}
+
+.menu li a {
+  font-size: large;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.hamburger-menu {
+  align-self: center;
+}
+
+@media (max-width: 1000px) {
+  .menu .navList .cart-link {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu .navList .cart-link {
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+.course-card-skeleton {
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    margin: 10px;
+    /* height: 400px; */
+    width: 100%;
+    /* animation: blink-animation 2s steps(5, start) infinite;
+    -webkit-animation: blink-animation 2s steps(5, start) infinite; */
+}
+
+.skeleton {
+    background-color: #eee;
+    margin: 5px 0;
+}
+
+/* .skeleton-image {
+    height: 150px;
+} */
+
+.skeleton-text {
+    height: 20px;
+    width: 100%;
+}
+
+.skeleton-text.short {
+    width: 60%;
+}

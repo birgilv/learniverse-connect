@@ -1,0 +1,62 @@
+.home-content .button-row .home-row-button .button-image {
+  height: 5rem;
+  width: 5rem;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.home-content {
+  display: contents;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.home-container .front-image .image{
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button-row .home-row-button {
+  width: 13.5rem;
+  height: 10rem;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid rgb(151, 88, 163);
+  background: rgb(151, 88, 163);
+  position: relative;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.button-row .home-row-button:hover {
+  border: 2px solid rgb(204, 115, 207);
+  background: rgb(204, 115, 207);
+  transform: scale(1.05);
+}
+
+.button-link .home-row-button {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center
+}
+
+.button-link .home-row-button-none {
+  display: none;
+}

@@ -1,0 +1,17 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding-bottom: 20px; /* Add padding below the search bar */
+  margin: 0 auto; /* Center the search bar horizontally */
+}
+
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
